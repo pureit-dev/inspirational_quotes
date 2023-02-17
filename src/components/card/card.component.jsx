@@ -5,7 +5,7 @@ import "./card.styles.css"
 import Button from "../button/button.component"
 import Quote from "../quote/quote.component"
 
-const initialImage = {
+const errorImage = {
 	urls: {
 		regular:
 			"https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTA3NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY1NDMzNDg&ixlib=rb-4.0.3&q=80&w=1080",
@@ -13,7 +13,7 @@ const initialImage = {
 }
 
 const Card = () => {
-	const [wallpaper, setWallpaper] = useState(initialImage)
+	const [wallpaper, setWallpaper] = useState({urls: {regular: null}})
 	const [isClicked, setIsClicked] = useState(false)
 
 	const getWallpaper = async () => {
@@ -25,6 +25,7 @@ const Card = () => {
 			setWallpaper(json)
 		} catch (error) {
 			console.log("an error occurred", error)
+			setWallpaper(errorImage)
 		}
 	}
 
