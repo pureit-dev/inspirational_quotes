@@ -1,0 +1,35 @@
+.quote-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 30px;
+    max-width: 60%;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.quote-text{
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: centlefter;
+}
+
+.quote-author {
+    margin: 10px 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: right;
+}
+
+/* =================
+    Media queries 
+   ================= */
+   @media (min-width: 600px) {
+    .quote-text{
+        font-size: 1.125rem;
+    }
+    .quote-author{
+        font-size: 1.125rem;
+    }
+    
+}

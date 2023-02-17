@@ -1,30 +1,16 @@
-import {useEffect, useState} from 'react'
+import { useContext, useState } from "react"
+import { QuotesContext } from "../../contexts/quotes.context"
+import './quote.styles.css'
 
 const Quote = () => {
-
-    const [quotes, setQuotes] = useState('')
-
-    const getQuote = async () => {
-        const quoteURL = `https://zenquotes.io/api/quotes/`
-        try {
-            const data = await fetch(quoteURL)
-            const json = await data.json()
-            
-            setQuotes(json)
-            
-        } catch (error) {
-            console.log("an error occurred", error)
-        }
-    }
-
-    useEffect(() => {
-        getQuote()
-
-    }, [])
-
+    const {currentQuote} = useContext(QuotesContext)
+    
     return (
-        <p>Quote</p>
+        <div className="quote-container">
+            <q className="quote-text">{currentQuote.text}</q>
+            <p className="quote-author">{currentQuote.author}</p>
+        </div>
     )
 }
 
-export default Quote;
+export default Quote
