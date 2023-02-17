@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext} from "react"
 import { QuotesContext } from "../../contexts/quotes.context"
 import './quote.styles.css'
 

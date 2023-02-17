@@ -1,5 +1,4 @@
 import Card from "../card/card.component"
-import Quote from "../quote/quote.component"
 
 import "./App.css"
 

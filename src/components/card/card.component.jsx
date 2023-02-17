@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { apiKeys } from "../../utils/apiKeys"
 import "./card.styles.css"
 
 import Button from "../button/button.component"
@@ -12,12 +11,14 @@ const errorImage = {
 	},
 }
 
+const UNSPLASH_API = process.env.REACT_APP_UNSPLASH
+
 const Card = () => {
 	const [wallpaper, setWallpaper] = useState({urls: {regular: null}})
 	const [isClicked, setIsClicked] = useState(false)
-
+//apiKeys.unsplash
 	const getWallpaper = async () => {
-		const unsplashURL = `https://api.unsplash.com/photos/random?client_id=${apiKeys.unsplash}&orientation=landscape&query=nature`
+		const unsplashURL = `https://api.unsplash.com/photos/random?client_id=${UNSPLASH_API}&orientation=landscape&query=nature`
 		try {
 			const data = await fetch(unsplashURL)
 			const json = await data.json()
